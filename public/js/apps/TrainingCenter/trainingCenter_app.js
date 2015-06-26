@@ -24,7 +24,6 @@ define([
         API.showTraining();
       });
 
-
       TrainingApp.on("start", function(){
         new TrainingApp.Router({
           controller: API

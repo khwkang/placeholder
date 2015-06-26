@@ -27,10 +27,8 @@ define([
             comment: this.ui.commentBox.val(),
             approved: true, 
           }
-
           VirtualDojo.trigger("entities:feedback:approve", requestData)
         },
-
   
         submitDisapproval: function(e) {
           e.preventDefault();
@@ -51,13 +49,7 @@ define([
             comment: comment,
           }
         },
-
-        initialize: function() {
-          console.log("kkkkkrtrtrtrtkkkk", this.model);
-        }
-
       });
-
     })
     return VirtualDojo.FeedbackApp.View;
   })

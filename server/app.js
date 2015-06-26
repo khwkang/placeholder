@@ -46,36 +46,6 @@ app.use('/api', api);
 app.use('/api/user', users);
 app.use('/auth', auth);
 
-// checking authentication (auth_app line 31)
-// app.use(function(req,res,next){
-//   if (req.url === '/checkauth') {
-//     if(!req.session.user) {
-//       console.log('session dont exist');
-//       res.json({isAuthed: false});
-//     } else {
-//       //make query
-//       res.json({isAuthed: true, username: req.session.user});
-//       console.log('user is authorized');
-//       // res.end();
-//     }
-//   }
-// });
-
-// middleware to make sure to block access to internal pages if user is not logged in.
-// app.use(function(req,res,next){
-//   if (req.url === '/auth/login'){
-//     next();
-//   }
-//   else {
-//     if (!req.session.user){
-//       res.redirect('/auth/login');
-//     }
-//     else {
-//       next();
-//     }
-//   }
-// });
-
 // Passport will serialize and deserialize user instances to and from the session.
 // Not using these right now, maybe later?
 passport.serializeUser(function(user, done) {
@@ -124,16 +94,6 @@ passport.use('local',new LocalStrategy(
 
   }));
 
-// Catch 404 and forward to error handler
-// app.use(function(req, res, next) {
-//   var err = new Error('Not Found');
-//   err.status = 404;
-//   next(err);
-// });
-// error handlers
-
-// development error handler
-// will print stacktrace
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
 
@@ -144,9 +104,6 @@ if (app.get('env') === 'development') {
   });
 }
 else {
-  // FIXME
-  // production error handler
-  // no stacktraces leaked to user
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     console.log(err.message);

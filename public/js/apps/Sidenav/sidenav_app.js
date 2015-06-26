@@ -10,12 +10,10 @@ define([
           SidenavController.listSidenav();
         }
       };
-
       VirtualDojo.on("show:sidenav", function(){
         API.listSidenav();
       });
     });
-
     return VirtualDojo.SidenavApp;
 });
 

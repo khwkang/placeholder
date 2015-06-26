@@ -31,10 +31,8 @@ define([
           } else {
             LevelApp.Controller.showLevel(disciplineId);
           }
-
         }
       };
-
       
       VirtualDojo.on("show:video", function(params){
         VirtualDojo.navigate(LevelApp.generateClassUrl(params.disciplineId, params.classNum, params.levelNum));

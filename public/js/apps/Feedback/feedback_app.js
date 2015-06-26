@@ -50,7 +50,6 @@ define([
           controller: API
         });
       });
-
     });
     return VirtualDojo.FeedbackApp 
   }

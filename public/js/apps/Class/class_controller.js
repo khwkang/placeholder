@@ -29,14 +29,12 @@ define([
               .done(function(data){
                 var levels = data;
                 if (levels) {
-
                   // instantiate progress collection and models
                   var levelCollection = new LevelModels.Levels();
                   levels.forEach(function(level) {
                     levelCollection.add(new LevelModels.Level(level));
                   });
                 }
-
                 classLayoutView.levelRegion.show(new ClassView.LevelList({
                   collection: levelCollection
                 }));

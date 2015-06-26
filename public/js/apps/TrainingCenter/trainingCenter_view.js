@@ -8,7 +8,6 @@ define([
   function(VirtualDojo, ClassApp, traininglayoutTpl, classThumbViewTpl, classListViewTpl) {
     VirtualDojo.module("TrainingApp.View", function(View, VirtualDojo, Backbone, Marionette, $, _){
       
-    
     // TrainingCenter Layout View 
 
       View.TrainingLayout = Marionette.LayoutView.extend({
@@ -29,7 +28,6 @@ define([
 
         serializeData: function() {
           var model = this.model;
-
           var title = model.get("title");
           var description = model.get("description");
           var classImage = model.get("classImage");
@@ -44,7 +42,6 @@ define([
         },
 
         initialize: function() {
-
           // permission access control 
           if (this.model.get("disciplineId") === 1 ) {
             if (this.model.get("classNum") > UTConfig.currentKendoClass) {

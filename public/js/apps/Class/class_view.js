@@ -46,22 +46,12 @@ define([
             'classNum': classNum,
             'levelNum': levelNum
           })
-
         },
-        initialize: function() {
-          console.log("eeeeeee", this.model);
-        }
       });
 
       // LevelList collection view
       View.LevelList = Marionette.CollectionView.extend({
         childView: View.Level,
-        serializeData: function() {
-          return {
-            // title: this.model.get("title"),
-            // description: this.model.get("description")
-          } 
-        }
       });
     });
     return VirtualDojo.ClassApp.View;

@@ -34,7 +34,7 @@ define([
       };
       
       VirtualDojo.on("show:class", function(params){
-        console.log('show:class listener executed!!');
+        // console.log('show:class listener executed!!');
         if (!params) return;
         VirtualDojo.navigate(ClassApp.generateClassUrl(params.disciplineId, params.classNum));
         API.showClass(params);

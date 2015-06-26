@@ -5,11 +5,8 @@ define([
   function(VirtualDojo,LevelViewTpl){
 
     VirtualDojo.module("LevelApp.View", function(View, VirtualDojo, Backbone, Marionette, $, _){
-
-
       View.Video = Marionette.ItemView.extend({
         template: LevelViewTpl,
-
 
         ui: {
           prevButton: ".prev",
@@ -32,9 +29,6 @@ define([
             classNum: this.model.get("classNum"),
             videoUrl: this.ui.urlInput.val()
           }
-
-          // console.log(requestData);
-          
           VirtualDojo.trigger('entities:feedback:post', requestData); 
         },
 
@@ -91,12 +85,7 @@ define([
             prev: prev
           }
         },
-
-        initialize: function() {
-        }
-
       });
-
     })
     return VirtualDojo.LevelApp.View;
   })

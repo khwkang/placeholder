@@ -18,14 +18,12 @@ define([
                   if (data) {
                     var videoModel = new LevelModel.Level(data);
                   }
-
                   LevelMainView = new LevelView.Video({model: videoModel});
                   VirtualDojo.regions.main.show(LevelMainView);
                 });
           })
         }
       };
-
     });
     return VirtualDojo.LevelApp.Controller
   });

@@ -9,7 +9,6 @@ define([
       AuthApp.Controller = {
             
         showLoginPage: function(){
-
           var loginView = new LoginView.view();
           VirtualDojo.regions.main.show(loginView);
         },
@@ -17,9 +16,6 @@ define([
         showSignUpPage: function() {
           var signupView = new SignupView.view();
           VirtualDojo.regions.main.show(signupView);
-        },
-
-        initialize: function() {
         },
 
         authenticate: function (username, password, unauthorized ) {
@@ -37,7 +33,6 @@ define([
           });
 
           request.done(function() {
-
             console.log("AuthCheck: on Ajax call success");
             VirtualDojo.trigger("authenticate:init");
 
@@ -59,7 +54,6 @@ define([
             email: email, 
             PermissionKey: PermissionKey
           }
-          console.log('ajax signup post request object', ajaxData)
 
           var request = $.ajax({
             url: "/auth/signup",
@@ -81,7 +75,6 @@ define([
         },
 
         logout: function() {
-          console.log('logout trigger detected: API.showLoginPage() executed')
           $.get("/auth/logout")
             .success(function() {
               console.log("logged out, reload")

@@ -56,7 +56,7 @@ define([
                     .done(function(data){
                       console.log("user data from ajax", data);
                       UTConfig.isInstructor = data.isInstructor;
-                      
+  
                       // get user's current progress
                       if (!UTConfig.isInstructor) {
                         require(["entities/progress"], function() {
@@ -79,8 +79,6 @@ define([
                       }
                     });
                 });
-                // VirtualDojo.Utilities.enterApplication();
-
               } else {
                 VirtualDojo.trigger("auth:login:show");
               }

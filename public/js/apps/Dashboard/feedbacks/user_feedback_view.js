@@ -6,7 +6,6 @@ define([
   ],
   function(VirtualDojo, feedbackViewTpl, feedbacksViewTpl) {
     VirtualDojo.module("DashApp.Feedback.View", function(View, VirtualDojo, Backbone, Marionette, $, _){
-
       // single class item view
       View.UserFeedback = Marionette.ItemView.extend({
         className: "event",
@@ -26,7 +25,6 @@ define([
         },
 
         serializeData: function() {
-          console.log("gggggg", this.model);
           var model = this.model;
           var username = model.get("studentUsername");
           var classTitle = model.get("classTitle");
@@ -38,9 +36,6 @@ define([
             approved: approved
           } 
         },
-
-        initialize: function() {
-        }
       });
 
       // my classes collection view

@@ -46,11 +46,6 @@ define([
         template: instructorDashboardTpl,
         childView: View.PendingFeedback,
         childViewContainer: ".feedback-container",
-
-        serializeData: function() {
-          return {
-          } 
-        }
       });
     });
     return VirtualDojo.DashApp.Instructor.View;
